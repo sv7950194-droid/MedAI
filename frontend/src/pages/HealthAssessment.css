@@ -1,0 +1,692 @@
+/* =========================================
+   MEDAI - HEALTH ASSESSMENT
+   Professional Medical AI SaaS UI
+========================================= */
+
+.assessment-page {
+  min-height: 100vh;
+  background: #f6faf9;
+  color: #163b38;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.assessment-topbar {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e3efec;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.assessment-logo {
+  border: none;
+  background: transparent;
+  color: #087f73;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.assessment-logo span {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5f7f3;
+  color: #087f73;
+  font-size: 22px;
+}
+
+.assessment-top-title {
+  text-align: center;
+}
+
+.assessment-top-title span {
+  display: block;
+  color: #6b8985;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 3px;
+}
+
+.assessment-top-title strong {
+  font-size: 15px;
+  color: #183f3b;
+}
+
+.exit-button {
+  border: 1px solid #d8e8e5;
+  background: #ffffff;
+  color: #426762;
+  border-radius: 9px;
+  padding: 10px 17px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.exit-button:hover {
+  background: #eff8f6;
+  border-color: #b8dcd6;
+  color: #087f73;
+}
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.assessment-progress-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 25px 20px;
+}
+
+.assessment-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #718d89;
+}
+
+.assessment-progress-info strong {
+  color: #087f73;
+}
+
+.assessment-progress-bar {
+  height: 7px;
+  width: 100%;
+  background: #dfecea;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.assessment-progress-bar > div {
+  height: 100%;
+  background: linear-gradient(90deg, #087f73, #31b7a4);
+  border-radius: inherit;
+  transition: width 0.4s ease;
+}
+
+.assessment-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.assessment-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: #9aafac;
+  min-width: 70px;
+}
+
+.assessment-step > span {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7efed;
+  color: #78908d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.assessment-step small {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.assessment-step.active {
+  color: #087f73;
+}
+
+.assessment-step.active > span {
+  background: #087f73;
+  color: #ffffff;
+  box-shadow: 0 0 0 5px rgba(8, 127, 115, 0.1);
+}
+
+.assessment-step.completed {
+  color: #087f73;
+}
+
+.assessment-step.completed > span {
+  background: #dff4ef;
+  color: #087f73;
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.assessment-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 25px 50px;
+}
+
+.assessment-card {
+  background: #ffffff;
+  border: 1px solid #e2eeeb;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(28, 73, 68, 0.06);
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.assessment-section-heading {
+  margin-bottom: 30px;
+}
+
+.assessment-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #0a9283;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.assessment-section-heading h2 {
+  margin: 0;
+  color: #173e3a;
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.assessment-section-heading p {
+  margin: 9px 0 0;
+  color: #718985;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #315650;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9e8e5;
+  background: #fbfdfc;
+  color: #173e3a;
+  border-radius: 10px;
+  padding: 12px 13px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #49aa9e;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(8, 127, 115, 0.08);
+}
+
+.form-field input::placeholder {
+  color: #a6b8b5;
+}
+
+.field-help {
+  color: #8ba19e;
+  font-size: 11px;
+}
+
+/* =========================================
+   CHOICE CARDS
+========================================= */
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.choice-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dceae7;
+  background: #fbfdfc;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.choice-card:hover {
+  border-color: #9dcfc7;
+  background: #f4fbf9;
+}
+
+.choice-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-indicator {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 2px solid #b6cbc7;
+  border-radius: 50%;
+  position: relative;
+}
+
+.choice-card input:checked + .choice-indicator {
+  border-color: #087f73;
+}
+
+.choice-card input:checked + .choice-indicator::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #087f73;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.choice-text {
+  color: #315650;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================
+   QUESTION CARDS
+========================================= */
+
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.question-card {
+  padding: 20px;
+  border: 1px solid #e2eeeb;
+  border-radius: 14px;
+  background: #fbfdfc;
+}
+
+.question-card h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  color: #234944;
+}
+
+.question-card p {
+  margin: 0 0 15px;
+  color: #78908d;
+  font-size: 12px;
+}
+
+/* =========================================
+   PRIVACY NOTE
+========================================= */
+
+.privacy-note {
+  margin-top: 25px;
+  padding: 15px 17px;
+  background: #eff9f7;
+  border: 1px solid #d5eee9;
+  border-radius: 11px;
+  color: #46706a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   REVIEW
+========================================= */
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.review-card {
+  padding: 18px;
+  border: 1px solid #e1ecea;
+  background: #fbfdfc;
+  border-radius: 13px;
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #2c514c;
+}
+
+.review-card p {
+  margin: 5px 0;
+  color: #718985;
+  font-size: 12px;
+}
+
+.review-warning {
+  margin-top: 22px;
+  padding: 15px 17px;
+  border-radius: 11px;
+  background: #fff8e9;
+  border: 1px solid #f4e4bd;
+  color: #765e28;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   PREDICTION
+========================================= */
+
+.prediction-ready {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.prediction-ready h2 {
+  margin: 0 0 10px;
+  color: #173e3a;
+  font-size: 28px;
+}
+
+.prediction-ready p {
+  margin: 0 auto;
+  max-width: 650px;
+  color: #718985;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.prediction-process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 32px 0;
+}
+
+.prediction-process > div {
+  padding: 18px;
+  border: 1px solid #dfecea;
+  background: #f8fcfb;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.prediction-process strong {
+  display: block;
+  color: #087f73;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.prediction-process span {
+  color: #718985;
+  font-size: 11px;
+}
+
+.prediction-disclaimer {
+  margin: 22px auto;
+  max-width: 700px;
+  padding: 16px;
+  background: #f7f9f9;
+  border: 1px solid #e4ebea;
+  border-radius: 11px;
+  color: #718985;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.prediction-button {
+  border: none;
+  border-radius: 11px;
+  padding: 13px 24px;
+  background: #087f73;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.prediction-button:hover {
+  background: #066c62;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.assessment-error {
+  margin-top: 22px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: #fff1f1;
+  border: 1px solid #f1cccc;
+  color: #a33d3d;
+  font-size: 13px;
+}
+
+.assessment-error span {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: #d95353;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* =========================================
+   NAVIGATION BUTTONS
+========================================= */
+
+.assessment-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #edf2f1;
+}
+
+.back-button,
+.next-button {
+  border-radius: 10px;
+  padding: 12px 21px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-button {
+  border: 1px solid #d9e7e4;
+  background: #ffffff;
+  color: #58736f;
+}
+
+.back-button:hover:not(:disabled) {
+  background: #f3f8f7;
+}
+
+.back-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.next-button {
+  border: none;
+  background: #087f73;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(8, 127, 115, 0.16);
+}
+
+.next-button:hover {
+  background: #066c62;
+  transform: translateY(-1px);
+}
+
+.assessment-back-dashboard {
+  display: block;
+  margin: 30px auto 0;
+  border: 1px solid #d8e7e4;
+  background: #ffffff;
+  color: #087f73;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.assessment-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8aa09d;
+  font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .assessment-topbar {
+    padding: 0 18px;
+  }
+
+  .assessment-top-title {
+    display: none;
+  }
+
+  .assessment-progress-wrapper,
+  .assessment-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .assessment-card {
+    padding: 24px 18px;
+    border-radius: 15px;
+  }
+
+  .form-grid,
+  .choice-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-process {
+    grid-template-columns: 1fr;
+  }
+
+  .assessment-steps {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 22px;
+    padding-bottom: 5px;
+  }
+
+  .assessment-step {
+    flex-shrink: 0;
+  }
+
+  .assessment-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .assessment-logo {
+    font-size: 19px;
+  }
+
+  .exit-button {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .assessment-section-heading h2 {
+    font-size: 23px;
+  }
+
+  .assessment-navigation {
+    flex-direction: column-reverse;
+  }
+
+  .back-button,
+  .next-button {
+    width: 100%;
+  }
+}
