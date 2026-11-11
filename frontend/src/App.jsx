@@ -1,6 +1,10 @@
+import React from "react";
+import AIAssistant from "./pages/AIAssistant";
+import PredictionResult from "./pages/PredictionResult";
 import HealthAssessment from "./pages/HealthAssessment";
 import "./pages/Login.css";
 import Dashboard from "./pages/Dashboard";
+
 import {
   BrowserRouter,
   Routes,
@@ -8,7 +12,13 @@ import {
   Link,
   useNavigate
 } from "react-router-dom";
+
 import "./App.css";
+
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
 
 function Home() {
   return (
@@ -16,6 +26,7 @@ function Home() {
 
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
+
         <div className="logo">
           <span className="logo-mark">✚</span>
           <span>MedAI</span>
@@ -30,12 +41,17 @@ function Home() {
         </nav>
 
         <div className="nav-actions">
-          <a href="/login" className="login-link">Log in</a>
+          <a href="/login" className="login-link">
+            Log in
+          </a>
+
           <a href="#assessment" className="nav-button">
             Get Started →
           </a>
         </div>
+
       </header>
+
 
       <main>
 
@@ -62,6 +78,7 @@ function Home() {
             </p>
 
             <div className="hero-buttons">
+
               <a href="#assessment" className="primary-button">
                 Start Health Assessment
                 <span>→</span>
@@ -70,6 +87,7 @@ function Home() {
               <a href="#assistant" className="secondary-button">
                 ✦ Talk to MedAI
               </a>
+
             </div>
 
             <div className="hero-stats">
@@ -95,9 +113,11 @@ function Home() {
               </div>
 
             </div>
+
           </div>
 
-          {/* AI VISUAL */}
+
+          {/* ================= AI VISUAL ================= */}
           <div className="hero-visual">
 
             <div className="glow-circle"></div>
@@ -115,30 +135,36 @@ function Home() {
             </div>
 
             <div className="floating-card card-risk">
+
               <span className="card-icon">⌁</span>
 
               <div>
                 <small>Risk Analysis</small>
                 <strong>AI Assessment</strong>
               </div>
+
             </div>
 
             <div className="floating-card card-ai">
+
               <span className="card-icon">✦</span>
 
               <div>
                 <small>MedAI Assistant</small>
                 <strong>Ready to help</strong>
               </div>
+
             </div>
 
             <div className="floating-card card-health">
+
               <span className="card-icon">♥</span>
 
               <div>
                 <small>Health Insights</small>
                 <strong>Personalized</strong>
               </div>
+
             </div>
 
             <div className="visual-label">
@@ -147,6 +173,7 @@ function Home() {
             </div>
 
           </div>
+
         </section>
 
 
@@ -180,7 +207,10 @@ function Home() {
         <section className="section categories-section">
 
           <div className="section-heading">
-            <span className="eyebrow">HEALTH INTELLIGENCE</span>
+
+            <span className="eyebrow">
+              HEALTH INTELLIGENCE
+            </span>
 
             <h2>
               One platform for
@@ -192,14 +222,19 @@ function Home() {
               MedAI is designed as an expandable health intelligence
               platform with multiple assessment and assistance modules.
             </p>
+
           </div>
+
 
           <div className="category-grid">
 
             <div className="category-card active-category">
+
               <div className="category-icon">◉</div>
 
-              <span className="category-status">AVAILABLE</span>
+              <span className="category-status">
+                AVAILABLE
+              </span>
 
               <h3>Diabetes Risk</h3>
 
@@ -208,13 +243,20 @@ function Home() {
                 health and lifestyle indicators.
               </p>
 
-              <a href="#assessment">Start Assessment →</a>
+              <a href="#assessment">
+                Start Assessment →
+              </a>
+
             </div>
 
+
             <div className="category-card">
+
               <div className="category-icon">♥</div>
 
-              <span className="category-status coming">COMING SOON</span>
+              <span className="category-status coming">
+                COMING SOON
+              </span>
 
               <h3>Heart Health</h3>
 
@@ -223,13 +265,20 @@ function Home() {
                 health insights.
               </p>
 
-              <span className="category-link">Explore module →</span>
+              <span className="category-link">
+                Explore module →
+              </span>
+
             </div>
 
+
             <div className="category-card">
+
               <div className="category-icon">◌</div>
 
-              <span className="category-status coming">COMING SOON</span>
+              <span className="category-status coming">
+                COMING SOON
+              </span>
 
               <h3>Lifestyle Health</h3>
 
@@ -238,13 +287,20 @@ function Home() {
                 indicators influence health.
               </p>
 
-              <span className="category-link">Explore module →</span>
+              <span className="category-link">
+                Explore module →
+              </span>
+
             </div>
 
+
             <div className="category-card">
+
               <div className="category-icon">✦</div>
 
-              <span className="category-status coming">EXPANDING</span>
+              <span className="category-status coming">
+                EXPANDING
+              </span>
 
               <h3>AI Health Assistant</h3>
 
@@ -253,21 +309,30 @@ function Home() {
                 through conversational AI.
               </p>
 
-              <a href="#assistant">Talk to AI →</a>
+              <a href="#assistant">
+                Talk to AI →
+              </a>
+
             </div>
 
           </div>
+
         </section>
 
 
         {/* ================= ASSESSMENT ================= */}
-        <section className="section assessment-section" id="assessment">
+        <section
+          className="section assessment-section"
+          id="assessment"
+        >
 
           <div className="assessment-layout">
 
             <div className="assessment-info">
 
-              <span className="eyebrow">AI HEALTH ASSESSMENT</span>
+              <span className="eyebrow">
+                AI HEALTH ASSESSMENT
+              </span>
 
               <h2>
                 Turn health information
@@ -280,6 +345,7 @@ function Home() {
                 the information through its machine learning model
                 and returns a probability-based risk assessment.
               </p>
+
 
               <div className="assessment-points">
 
@@ -304,9 +370,14 @@ function Home() {
                 </div>
 
               </div>
-            <a href="/assessment" className="primary-button light-button">
+
+
+              <a
+                href="/assessment"
+                className="primary-button light-button"
+              >
                 Start Assessment →
-            </a>
+              </a>
 
             </div>
 
@@ -314,15 +385,21 @@ function Home() {
             <div className="assessment-preview">
 
               <div className="preview-header">
+
                 <div>
                   <small>MEDAI ASSESSMENT</small>
                   <h3>Health Profile</h3>
                 </div>
 
-                <span className="secure-badge">● Secure</span>
+                <span className="secure-badge">
+                  ● Secure
+                </span>
+
               </div>
 
+
               <div className="progress-container">
+
                 <div className="progress-top">
                   <span>Assessment progress</span>
                   <strong>64%</strong>
@@ -331,7 +408,9 @@ function Home() {
                 <div className="progress-bar">
                   <div></div>
                 </div>
+
               </div>
+
 
               <div className="input-preview-grid">
 
@@ -357,6 +436,7 @@ function Home() {
 
               </div>
 
+
               <div className="assessment-footer">
                 <span>AI analysis ready</span>
                 <span>→</span>
@@ -370,11 +450,16 @@ function Home() {
 
 
         {/* ================= HOW IT WORKS ================= */}
-        <section className="section how-section" id="how-it-works">
+        <section
+          className="section how-section"
+          id="how-it-works"
+        >
 
           <div className="section-heading centered">
 
-            <span className="eyebrow">HOW MEDAI WORKS</span>
+            <span className="eyebrow">
+              HOW MEDAI WORKS
+            </span>
 
             <h2>
               From your data
@@ -402,6 +487,7 @@ function Home() {
               </p>
             </div>
 
+
             <div className="step-card">
               <span className="step-number">02</span>
               <div className="step-icon">◈</div>
@@ -412,6 +498,7 @@ function Home() {
               </p>
             </div>
 
+
             <div className="step-card">
               <span className="step-number">03</span>
               <div className="step-icon">✦</div>
@@ -421,6 +508,7 @@ function Home() {
                 influencing the model prediction.
               </p>
             </div>
+
 
             <div className="step-card">
               <span className="step-number">04</span>
@@ -438,13 +526,18 @@ function Home() {
 
 
         {/* ================= TECHNOLOGY ================= */}
-        <section className="section technology-section" id="technology">
+        <section
+          className="section technology-section"
+          id="technology"
+        >
 
           <div className="technology-layout">
 
             <div className="technology-copy">
 
-              <span className="eyebrow">THE TECHNOLOGY</span>
+              <span className="eyebrow">
+                THE TECHNOLOGY
+              </span>
 
               <h2>
                 AI that doesn't
@@ -457,6 +550,7 @@ function Home() {
                 the system is designed to help users understand the
                 factors behind the model output.
               </p>
+
 
               <div className="tech-tags">
 
@@ -476,15 +570,19 @@ function Home() {
             <div className="tech-dashboard">
 
               <div className="tech-dashboard-header">
+
                 <div>
                   <small>MODEL INSIGHT</small>
                   <strong>Explainable AI</strong>
                 </div>
 
                 <span>LIVE MODEL</span>
+
               </div>
 
+
               <div className="model-score">
+
                 <div className="score-circle">
                   <strong>82</strong>
                   <span>AUC</span>
@@ -493,45 +591,61 @@ function Home() {
                 <div>
                   <small>Model performance</small>
                   <h3>ROC-AUC</h3>
-                  <p>Machine learning evaluation metric</p>
+                  <p>
+                    Machine learning evaluation metric
+                  </p>
                 </div>
+
               </div>
+
 
               <div className="factor-list">
 
                 <div>
                   <span>GenHlth</span>
+
                   <div className="factor-line">
                     <i style={{ width: "88%" }}></i>
                   </div>
+
                   <strong>High</strong>
                 </div>
+
 
                 <div>
                   <span>HighBP</span>
+
                   <div className="factor-line">
                     <i style={{ width: "74%" }}></i>
                   </div>
+
                   <strong>High</strong>
                 </div>
 
+
                 <div>
                   <span>Age</span>
+
                   <div className="factor-line">
                     <i style={{ width: "61%" }}></i>
                   </div>
+
                   <strong>Medium</strong>
                 </div>
 
+
                 <div>
                   <span>BMI</span>
+
                   <div className="factor-line">
                     <i style={{ width: "52%" }}></i>
                   </div>
+
                   <strong>Medium</strong>
                 </div>
 
               </div>
+
 
               <div className="xai-note">
                 ✦ Factors shown are model explanations, not medical diagnoses.
@@ -549,7 +663,9 @@ function Home() {
 
           <div className="section-heading centered">
 
-            <span className="eyebrow">INTERACTIVE EXPERIENCE</span>
+            <span className="eyebrow">
+              INTERACTIVE EXPERIENCE
+            </span>
 
             <h2>
               Meet the MedAI
@@ -589,7 +705,9 @@ function Home() {
 
             <div className="scanner-info">
 
-              <span className="eyebrow">SIMULATED DEMO</span>
+              <span className="eyebrow">
+                SIMULATED DEMO
+              </span>
 
               <h3>
                 A glimpse into the
@@ -601,6 +719,7 @@ function Home() {
                 It does not actually measure glucose, blood pressure,
                 oxygen levels or diagnose medical conditions.
               </p>
+
 
               <div className="scanner-stages">
 
@@ -638,7 +757,9 @@ function Home() {
 
           <div className="section-heading">
 
-            <span className="eyebrow">YOUR HEALTH DASHBOARD</span>
+            <span className="eyebrow">
+              YOUR HEALTH DASHBOARD
+            </span>
 
             <h2>
               Everything important,
@@ -663,12 +784,29 @@ function Home() {
                 MedAI
               </div>
 
-              <div className="side-item active">⌂ Overview</div>
-              <div className="side-item">◉ Assessment</div>
-              <div className="side-item">◈ Results</div>
-              <div className="side-item">✦ AI Assistant</div>
-              <div className="side-item">◌ History</div>
-              <div className="side-item">▣ Reports</div>
+              <div className="side-item active">
+                ⌂ Overview
+              </div>
+
+              <div className="side-item">
+                ◉ Assessment
+              </div>
+
+              <div className="side-item">
+                ◈ Results
+              </div>
+
+              <div className="side-item">
+                ✦ AI Assistant
+              </div>
+
+              <div className="side-item">
+                ◌ History
+              </div>
+
+              <div className="side-item">
+                ▣ Reports
+              </div>
 
             </aside>
 
@@ -682,7 +820,9 @@ function Home() {
                   <h3>Your Health Overview</h3>
                 </div>
 
-                <button>+ New Assessment</button>
+                <button>
+                  + New Assessment
+                </button>
 
               </div>
 
@@ -715,13 +855,16 @@ function Home() {
                 <div className="trend-card">
 
                   <div className="chart-header">
+
                     <div>
                       <small>RISK TREND</small>
                       <strong>Assessment history</strong>
                     </div>
 
                     <span>Last 6 months</span>
+
                   </div>
+
 
                   <div className="fake-chart">
 
@@ -742,11 +885,15 @@ function Home() {
 
                   <small>RECENT ASSESSMENT</small>
 
-                  <h4>Diabetes Risk Assessment</h4>
+                  <h4>
+                    Diabetes Risk Assessment
+                  </h4>
 
                   <div className="recent-result">
+
                     <strong>24.8%</strong>
                     <span>Risk probability</span>
+
                   </div>
 
                   <span className="view-result">
@@ -765,7 +912,10 @@ function Home() {
 
 
         {/* ================= AI ASSISTANT ================= */}
-        <section className="section assistant-section" id="assistant">
+        <section
+          className="section assistant-section"
+          id="assistant"
+        >
 
           <div className="assistant-layout">
 
@@ -774,19 +924,27 @@ function Home() {
               <div className="assistant-glow"></div>
 
               <div className="robot-avatar">
+
                 <div className="robot-head">
+
                   <div className="robot-eyes">
                     <span></span>
                     <span></span>
                   </div>
+
                 </div>
 
                 <div className="robot-body">
-                  <div className="robot-core">✦</div>
+                  <div className="robot-core">
+                    ✦
+                  </div>
                 </div>
+
               </div>
 
+
               <div className="voice-wave">
+
                 <span></span>
                 <span></span>
                 <span></span>
@@ -794,7 +952,9 @@ function Home() {
                 <span></span>
                 <span></span>
                 <span></span>
+
               </div>
+
 
               <div className="assistant-state">
                 <span className="pulse"></span>
@@ -806,7 +966,9 @@ function Home() {
 
             <div className="assistant-content">
 
-              <span className="eyebrow">MEET YOUR AI ASSISTANT</span>
+              <span className="eyebrow">
+                MEET YOUR AI ASSISTANT
+              </span>
 
               <h2>
                 Ask questions.
@@ -819,35 +981,66 @@ function Home() {
                 technical AI results in simple language.
               </p>
 
+
               <div className="assistant-features">
 
                 <div>
+
                   <span>✦</span>
+
                   <div>
-                    <strong>Explain my result</strong>
-                    <p>Understand your prediction in simple language.</p>
+                    <strong>
+                      Explain my result
+                    </strong>
+
+                    <p>
+                      Understand your prediction in simple language.
+                    </p>
                   </div>
+
                 </div>
 
+
                 <div>
+
                   <span>◉</span>
+
                   <div>
-                    <strong>Ask health questions</strong>
-                    <p>Have a conversational health information experience.</p>
+                    <strong>
+                      Ask health questions
+                    </strong>
+
+                    <p>
+                      Have a conversational health information experience.
+                    </p>
                   </div>
+
                 </div>
 
+
                 <div>
+
                   <span>◌</span>
+
                   <div>
-                    <strong>Voice interaction</strong>
-                    <p>Talk naturally using speech input and audio responses.</p>
+                    <strong>
+                      Voice interaction
+                    </strong>
+
+                    <p>
+                      Talk naturally using speech input and audio responses.
+                    </p>
                   </div>
+
                 </div>
 
               </div>
 
-              <a href="/login" className="primary-button">
+
+              <a
+                href="/login"
+                className="primary-button"
+              >
                 Talk to MedAI →
               </a>
 
@@ -863,7 +1056,9 @@ function Home() {
 
           <div className="section-heading centered">
 
-            <span className="eyebrow">PERSONALIZED INSIGHTS</span>
+            <span className="eyebrow">
+              PERSONALIZED INSIGHTS
+            </span>
 
             <h2>
               More than a prediction.
@@ -881,34 +1076,53 @@ function Home() {
 
             <div className="insight-card">
               <span className="insight-number">01</span>
-              <h3>Risk Probability</h3>
+
+              <h3>
+                Risk Probability
+              </h3>
+
               <p>
                 View the model's estimated probability instead of
                 receiving a simple yes-or-no result.
               </p>
             </div>
 
+
             <div className="insight-card">
               <span className="insight-number">02</span>
-              <h3>Key Factors</h3>
+
+              <h3>
+                Key Factors
+              </h3>
+
               <p>
                 Explore health indicators that contributed to the
                 model's prediction.
               </p>
             </div>
 
+
             <div className="insight-card">
               <span className="insight-number">03</span>
-              <h3>AI Explanation</h3>
+
+              <h3>
+                AI Explanation
+              </h3>
+
               <p>
                 Get technical model results translated into
                 understandable language.
               </p>
             </div>
 
+
             <div className="insight-card">
               <span className="insight-number">04</span>
-              <h3>History</h3>
+
+              <h3>
+                History
+              </h3>
+
               <p>
                 Review previous assessments and monitor your
                 assessment history over time.
@@ -927,7 +1141,9 @@ function Home() {
 
             <div className="reports-content">
 
-              <span className="eyebrow">SMART REPORTS</span>
+              <span className="eyebrow">
+                SMART REPORTS
+              </span>
 
               <h2>
                 Your assessment,
@@ -940,6 +1156,7 @@ function Home() {
                 into a structured downloadable report.
               </p>
 
+
               <div className="report-features">
 
                 <div>✓ Assessment summary</div>
@@ -950,7 +1167,11 @@ function Home() {
 
               </div>
 
-              <a href="/login" className="secondary-button">
+
+              <a
+                href="/login"
+                className="secondary-button"
+              >
                 Explore Reports →
               </a>
 
@@ -960,18 +1181,33 @@ function Home() {
             <div className="report-card">
 
               <div className="report-top">
-                <div className="report-logo">✚</div>
+
+                <div className="report-logo">
+                  ✚
+                </div>
 
                 <div>
                   <small>MEDAI</small>
-                  <strong>Health Assessment Report</strong>
+                  <strong>
+                    Health Assessment Report
+                  </strong>
                 </div>
+
               </div>
 
+
               <div className="report-risk">
-                <small>ESTIMATED RISK PROBABILITY</small>
-                <strong>24.8%</strong>
+
+                <small>
+                  ESTIMATED RISK PROBABILITY
+                </small>
+
+                <strong>
+                  24.8%
+                </strong>
+
               </div>
+
 
               <div className="report-bars">
 
@@ -992,6 +1228,7 @@ function Home() {
 
               </div>
 
+
               <div className="report-bottom">
                 Explainable AI Summary
               </div>
@@ -1004,11 +1241,16 @@ function Home() {
 
 
         {/* ================= SAFETY ================= */}
-        <section className="section safety-section" id="safety">
+        <section
+          className="section safety-section"
+          id="safety"
+        >
 
           <div className="safety-content">
 
-            <span className="eyebrow">SAFETY & TRANSPARENCY</span>
+            <span className="eyebrow">
+              SAFETY & TRANSPARENCY
+            </span>
 
             <h2>
               AI should inform,
@@ -1028,27 +1270,53 @@ function Home() {
           <div className="safety-points">
 
             <div>
+
               <span>✓</span>
+
               <div>
-                <strong>Probability-based</strong>
-                <p>Results represent model-estimated risk probability.</p>
+                <strong>
+                  Probability-based
+                </strong>
+
+                <p>
+                  Results represent model-estimated risk probability.
+                </p>
               </div>
+
             </div>
 
-            <div>
-              <span>✓</span>
-              <div>
-                <strong>Explainable</strong>
-                <p>Model factors can be explored through XAI.</p>
-              </div>
-            </div>
 
             <div>
+
               <span>✓</span>
+
               <div>
-                <strong>Transparent</strong>
-                <p>Limitations and safety information are clearly shown.</p>
+                <strong>
+                  Explainable
+                </strong>
+
+                <p>
+                  Model factors can be explored through XAI.
+                </p>
               </div>
+
+            </div>
+
+
+            <div>
+
+              <span>✓</span>
+
+              <div>
+                <strong>
+                  Transparent
+                </strong>
+
+                <p>
+                  Limitations and safety information are clearly shown.
+                </p>
+              </div>
+
             </div>
 
           </div>
@@ -1061,7 +1329,9 @@ function Home() {
 
           <div className="section-heading centered">
 
-            <span className="eyebrow">FAQ</span>
+            <span className="eyebrow">
+              FAQ
+            </span>
 
             <h2>
               Questions about MedAI?
@@ -1073,35 +1343,58 @@ function Home() {
           <div className="faq-grid">
 
             <div className="faq-item">
-              <h3>What is MedAI?</h3>
+
+              <h3>
+                What is MedAI?
+              </h3>
+
               <p>
                 MedAI is an AI-powered health risk assessment platform
                 designed for educational and research purposes.
               </p>
+
             </div>
 
+
             <div className="faq-item">
-              <h3>Does MedAI diagnose diabetes?</h3>
+
+              <h3>
+                Does MedAI diagnose diabetes?
+              </h3>
+
               <p>
                 No. MedAI provides a model-based risk estimate and is
                 not a medical diagnostic system.
               </p>
+
             </div>
 
+
             <div className="faq-item">
-              <h3>How does the prediction work?</h3>
+
+              <h3>
+                How does the prediction work?
+              </h3>
+
               <p>
                 Health indicators are processed by a machine learning
                 model that produces an estimated probability.
               </p>
+
             </div>
 
+
             <div className="faq-item">
-              <h3>What is Explainable AI?</h3>
+
+              <h3>
+                What is Explainable AI?
+              </h3>
+
               <p>
                 Explainable AI helps users understand which features
                 influenced a machine learning prediction.
               </p>
+
             </div>
 
           </div>
@@ -1114,7 +1407,9 @@ function Home() {
 
           <div className="cta-glow"></div>
 
-          <span className="eyebrow">START YOUR JOURNEY</span>
+          <span className="eyebrow">
+            START YOUR JOURNEY
+          </span>
 
           <h2>
             Understand your health
@@ -1127,13 +1422,20 @@ function Home() {
             machine learning powered assessment experience.
           </p>
 
+
           <div className="cta-buttons">
 
-            <a href="/login" className="primary-button light-button">
+            <a
+              href="/login"
+              className="primary-button light-button"
+            >
               Start Assessment →
             </a>
 
-            <a href="#assistant" className="secondary-button cta-secondary">
+            <a
+              href="#assistant"
+              className="secondary-button cta-secondary"
+            >
               Talk to MedAI
             </a>
 
@@ -1152,8 +1454,15 @@ function Home() {
           <div className="footer-brand">
 
             <div className="logo">
-              <span className="logo-mark">✚</span>
-              <span>MedAI</span>
+
+              <span className="logo-mark">
+                ✚
+              </span>
+
+              <span>
+                MedAI
+              </span>
+
             </div>
 
             <p>
@@ -1167,10 +1476,22 @@ function Home() {
           <div className="footer-column">
 
             <h4>Product</h4>
-            <a href="#assessment">Assessment</a>
-            <a href="#technology">Technology</a>
-            <a href="#assistant">AI Assistant</a>
-            <a href="#safety">Safety</a>
+
+            <a href="#assessment">
+              Assessment
+            </a>
+
+            <a href="#technology">
+              Technology
+            </a>
+
+            <a href="#assistant">
+              AI Assistant
+            </a>
+
+            <a href="#safety">
+              Safety
+            </a>
 
           </div>
 
@@ -1178,10 +1499,22 @@ function Home() {
           <div className="footer-column">
 
             <h4>Platform</h4>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/login">Login</a>
-            <a href="/login">Reports</a>
-            <a href="/login">History</a>
+
+            <a href="/dashboard">
+              Dashboard
+            </a>
+
+            <a href="/login">
+              Login
+            </a>
+
+            <a href="/login">
+              Reports
+            </a>
+
+            <a href="/login">
+              History
+            </a>
 
           </div>
 
@@ -1189,10 +1522,22 @@ function Home() {
           <div className="footer-column">
 
             <h4>Resources</h4>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#technology">AI Technology</a>
-            <a href="#safety">Privacy</a>
-            <a href="#safety">Disclaimer</a>
+
+            <a href="#how-it-works">
+              How It Works
+            </a>
+
+            <a href="#technology">
+              AI Technology
+            </a>
+
+            <a href="#safety">
+              Privacy
+            </a>
+
+            <a href="#safety">
+              Disclaimer
+            </a>
 
           </div>
 
@@ -1218,22 +1563,150 @@ function Home() {
 }
 
 
+/* =========================================================
+   REAL LOGIN PAGE
+========================================================= */
+
 function Login() {
+
   const navigate = useNavigate();
 
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const [error, setError] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+
+
+  /* ================= REAL LOGIN ================= */
+
+  const handleLogin = async (e) => {
+
+    e.preventDefault();
+
+    setError("");
+
+    if (!email.trim() || !password) {
+      setError("Please enter your email and password.");
+      return;
+    }
+
+
+    try {
+
+      setLoading(true);
+
+
+      const response = await fetch(
+        "http://127.0.0.1:8000/login",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          body: JSON.stringify({
+            email: email.trim(),
+            password: password
+          })
+        }
+      );
+
+
+      const data = await response.json();
+
+
+      if (!response.ok) {
+
+        setError(
+          data.detail ||
+          "Login failed. Please check your email and password."
+        );
+
+        return;
+      }
+
+
+      /* ================= SAVE USER ================= */
+
+      localStorage.setItem(
+        "medai_user_id",
+        data.user_id
+      );
+
+      localStorage.setItem(
+        "medai_user_email",
+        data.email
+      );
+
+
+      /* ================= DASHBOARD ================= */
+
+      navigate("/dashboard");
+
+    } catch (err) {
+
+      console.error("Login error:", err);
+
+      setError(
+        "Unable to connect to MedAI server. Please make sure the backend is running."
+      );
+
+    } finally {
+
+      setLoading(false);
+
+    }
+
+  };
+
+
+  /* ================= DEMO LOGIN ================= */
+
+  const handleDemoLogin = () => {
+
+    localStorage.setItem(
+      "medai_user_id",
+      "demo-user"
+    );
+
+    localStorage.setItem(
+      "medai_user_email",
+      "demo@medai.com"
+    );
+
+    navigate("/dashboard");
+
+  };
+
+
   return (
+
     <div className="login-page">
 
       <div className="login-card">
 
+
+        {/* ================= LOGO ================= */}
+
         <div className="login-logo">
+
           <span>✚</span>
           MedAI
+
         </div>
+
 
         <div className="login-content">
 
-          <span className="eyebrow">WELCOME TO MEDAI</span>
+
+          {/* ================= HEADING ================= */}
+
+          <span className="eyebrow">
+            WELCOME TO MEDAI
+          </span>
+
 
           <h1>
             Your health.
@@ -1241,89 +1714,189 @@ function Login() {
             <span>Understood by AI.</span>
           </h1>
 
+
           <p>
             Sign in to access your health dashboard, assessments,
             AI insights and personalized health information.
           </p>
 
-          <div className="login-form">
 
-            <label>Email address</label>
+          {/* ================= LOGIN FORM ================= */}
+
+          <form
+            className="login-form"
+            onSubmit={handleLogin}
+          >
+
+
+            <label>
+              Email address
+            </label>
+
+
             <input
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError("");
+              }}
+              autoComplete="email"
             />
 
-            <label>Password</label>
+
+            <label>
+              Password
+            </label>
+
+
             <input
               type="password"
               placeholder="Enter your password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError("");
+              }}
+              autoComplete="current-password"
             />
 
+
+            {/* ================= ERROR ================= */}
+
+            {error && (
+
+              <p
+                style={{
+                  color: "#d9534f",
+                  fontSize: "14px",
+                  marginTop: "8px",
+                  marginBottom: "8px"
+                }}
+              >
+                {error}
+              </p>
+
+            )}
+
+
+            {/* ================= LOGIN BUTTON ================= */}
+
             <button
-              type="button"
+              type="submit"
               className="login-button"
-              onClick={() => navigate("/dashboard")}
+              disabled={loading}
             >
-              Sign in to MedAI →
+
+              {loading
+                ? "Signing in..."
+                : "Sign in to MedAI →"}
+
             </button>
 
-          </div>
+
+          </form>
+
+
+          {/* ================= DIVIDER ================= */}
 
           <div className="login-divider">
             <span>or</span>
           </div>
 
+
+          {/* ================= DEMO LOGIN ================= */}
+
           <button
             type="button"
             className="demo-button"
-            onClick={() => navigate("/dashboard")}
+            onClick={handleDemoLogin}
           >
             Continue with Demo Account
           </button>
 
+
+          {/* ================= NOTE ================= */}
+
           <p className="login-note">
-            Authentication will be connected to the MedAI backend
-            and MongoDB in the next phase.
+            Your account is securely connected to the
+            MedAI backend and MongoDB.
           </p>
+
 
         </div>
 
-        <Link to="/" className="back-home">
+
+        {/* ================= BACK HOME ================= */}
+
+        <Link
+          to="/"
+          className="back-home"
+        >
           ← Back to MedAI Home
         </Link>
+
 
       </div>
 
     </div>
+
   );
 }
 
 
-
-
+/* =========================================================
+   APP ROUTES
+========================================================= */
 
 function App() {
+
   return (
+
     <BrowserRouter>
 
       <Routes>
 
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
 
         <Route
           path="/login"
           element={<Login />}
         />
 
+
         <Route
           path="/dashboard"
           element={<Dashboard />}
         />
-<Route path="/assessment" element={<HealthAssessment />} />
+
+
+        <Route
+          path="/assessment"
+          element={<HealthAssessment />}
+        />
+
+
+        <Route
+          path="/prediction-result"
+          element={<PredictionResult />}
+        />
+
+
+        <Route
+          path="/assistant"
+          element={<AIAssistant />}
+        />
+
       </Routes>
 
     </BrowserRouter>
+
   );
 }
 
